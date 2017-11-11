@@ -3,7 +3,7 @@
 This library helps to create a primitive command line interface 
 using java. 
 
-![status](https://travis-ci.org/kosbr/cli-helper.svg?branch=1.0)
+![status](https://travis-ci.org/kosbr/cli-helper.svg?branch=master)
 
 ### Example
 
