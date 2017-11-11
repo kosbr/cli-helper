@@ -28,13 +28,22 @@ public class CommandExecutor {
             printStream.println("Command is not found");
             return true;
         }
-        final CommandOptions options = handler.createOptions();
+        final Class optionsClass = handler.getOptionsClass();
+
+        CommandOptions options;
+        try {
+            options = (CommandOptions) optionsClass.getConstructor().newInstance();
+        } catch (Throwable e) {
+            throw new RuntimeException("Empty constructor is not found for " + optionsClass);
+        }
+
         try {
             new JCommander(options, CliUtil.removeFirst(splited));
         } catch (ParameterException e) {
             printStream.println(e.getMessage());
             return true;
         }
+
         try {
             return handler.handle(options, printStream);
         } catch (Throwable e) {

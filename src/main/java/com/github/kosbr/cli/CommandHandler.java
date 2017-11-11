@@ -6,5 +6,5 @@ public interface CommandHandler<OPTIONS extends CommandOptions> {
 
     boolean handle(OPTIONS commandOptions, PrintStream printStream);
 
-    OPTIONS createOptions();
+    Class<OPTIONS> getOptionsClass();
 }

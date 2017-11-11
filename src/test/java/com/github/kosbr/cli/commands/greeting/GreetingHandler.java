@@ -13,7 +13,7 @@ public class GreetingHandler implements CommandHandler<GreetingOptions> {
     }
 
     @Override
-    public GreetingOptions createOptions() {
-        return new GreetingOptions();
+    public Class<GreetingOptions> getOptionsClass() {
+        return GreetingOptions.class;
     }
 }

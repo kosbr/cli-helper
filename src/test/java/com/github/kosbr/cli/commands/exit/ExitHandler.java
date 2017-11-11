@@ -13,7 +13,7 @@ public class ExitHandler implements CommandHandler<ExitOptions> {
     }
 
     @Override
-    public ExitOptions createOptions() {
-        return new ExitOptions();
+    public Class<ExitOptions> getOptionsClass() {
+        return ExitOptions.class;
     }
 }

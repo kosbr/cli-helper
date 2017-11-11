@@ -13,7 +13,7 @@ public class BadCommandHandler implements CommandHandler<BadCommandOptions> {
     }
 
     @Override
-    public BadCommandOptions createOptions() {
-        return new BadCommandOptions();
+    public Class<BadCommandOptions> getOptionsClass() {
+        return BadCommandOptions.class;
     }
 }
