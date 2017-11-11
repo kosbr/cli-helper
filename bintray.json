@@ -2,7 +2,7 @@
   "package": {
     "name": "cli-helper",
     "repo": "cli-helper",
-    "subject": "",
+    "subject": "dev-kosbr",
     "desc": "This library helps to create a primitive command line interface using java",
     "website_url": "https://github.com/kosbr/cli-helper",
     "issue_tracker_url": "",
