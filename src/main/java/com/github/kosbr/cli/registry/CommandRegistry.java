@@ -5,15 +5,18 @@ import com.github.kosbr.cli.CommandHandler;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * All commands should be registered here.
+ */
 public class CommandRegistry {
 
-    private Map<String, CommandHandler> handlersMap = new ConcurrentHashMap<>();
+    private final Map<String, CommandHandler> handlersMap = new ConcurrentHashMap<>();
 
-    public void registerCommand(String name, CommandHandler commandHandler) {
+    public void registerCommand(final String name, final CommandHandler commandHandler) {
         handlersMap.put(name, commandHandler);
     }
 
-    public CommandHandler getCommandHandler(String commandName) {
+    public CommandHandler getCommandHandler(final String commandName) {
         return handlersMap.get(commandName);
     }
 }

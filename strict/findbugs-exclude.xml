@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+
+<FindBugsFilter>
+
+    <!--
+        Codes:
+            NP: Nonnull field is not initialized
+            UwF: Field not initialized in constructor but dereferenced without null check
+            UrF: Unread public/protected field
+            UuF: Unused public or protected field
+            EI: May expose internal representation by returning reference to mutable object
+            EI2: May expose internal representation by incorporating reference to mutable object
+
+        Additional information:
+            http://findbugs.sourceforge.net/bugDescriptions.html
+    -->
+
+    <Match>
+        <Class name="com.github.kosbr.cli.ConsoleManager" />
+        <Method name="start" />
+        <Bug pattern="NP_DEREFERENCE_OF_READLINE_VALUE" />
+    </Match>
+
+</FindBugsFilter>

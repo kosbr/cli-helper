@@ -1,7 +1,18 @@
 package com.github.kosbr.cli.util;
 
+/**
+ * Util methods.
+ */
 public final class CliUtil {
 
+    private CliUtil() {
+    }
+
+    /**
+     * Removes the first element of the array.
+     * @param original
+     * @return
+     */
     public static String[] removeFirst(final String[] original) {
         if (original.length == 1) {
             return new String[0];

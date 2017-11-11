@@ -7,6 +7,10 @@ import com.github.kosbr.cli.registry.CommandRegistry;
 
 import java.io.PrintStream;
 
+/**
+ * This object is designed for passing text command to proper
+ * {@link CommandHandler} implementation.
+ */
 public class CommandExecutor {
 
     private final CommandRegistry commandRegistry;
@@ -15,6 +19,13 @@ public class CommandExecutor {
         this.commandRegistry = commandRegistry;
     }
 
+    /**
+     * Launch the command by proper {@link CommandHandler} implementation.
+     * All handlers' exceptions should be caught inside.
+     * @param command
+     * @param printStream
+     * @return
+     */
     public boolean execute(final String command, final PrintStream printStream) {
         final String[] splited = command.split(" ");
         if (splited.length == 0) {
