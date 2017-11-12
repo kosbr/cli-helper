@@ -92,7 +92,7 @@ allprojects {
 	}
 }
 dependencies {
-        compile 'com.github.kosbr:cli-helper:1.0'
+        compile 'com.github.kosbr:cli-helper:1.1'
 }
 
 ```
