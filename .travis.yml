@@ -1,6 +1,1 @@
 language: java
-deploy:
-  provider: bintray
-  file: "bintray.json"
-  user: $BINTRAY_USER
-  key: $API_KEY
