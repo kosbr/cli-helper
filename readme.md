@@ -141,7 +141,7 @@ commandRegistry.registerCommand("talk", new SimpleDialogCommandHandler());
 <dependency>
 	    <groupId>com.github.kosbr</groupId>
 	    <artifactId>cli-helper</artifactId>
-	    <version>1.1</version>
+	    <version>2.0</version>
 </dependency>
 	
 ```
@@ -155,7 +155,7 @@ allprojects {
 	}
 }
 dependencies {
-        compile 'com.github.kosbr:cli-helper:1.1'
+        compile 'com.github.kosbr:cli-helper:2.0'
 }
 
 ```
