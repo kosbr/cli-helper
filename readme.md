@@ -59,6 +59,69 @@ public static void main(String args[]) {
 }
 ```
 
+### Example with dialog command
+
+The example below describes how add a dialog command 
+(talk):
+
+```
+talk
+    What's your name?
+Bob
+    What's your age?
+10
+    You are Bob and your age is 10        
+```
+
+In other words, this command opens dialog and returns console only after
+dialog is finished.
+
+#### Step 1: Describe command options
+
+No options. Empty class.
+```
+public class SimpleDialogOptions implements CommandOptions {
+}
+```
+
+#### Step 2: Implement command handler
+
+```
+public class SimpleDialogCommandHandler implements DialogCommandHandler<SimpleDialogCommandOptions> {
+
+    @Override
+    public Class<SimpleDialogCommandOptions> getOptionsClass() {
+        return SimpleDialogCommandOptions.class;
+    }
+
+    @Override
+    public boolean handle(final SimpleDialogCommandOptions commandOptions,
+                          final PrintStream printStream,
+                          final BufferedReader bufferedReader) {
+        printStream.println("What is your name?");
+        final String name = readLineNotSafe(bufferedReader);
+        printStream.println("What is your age?");
+        final String age = readLineNotSafe(bufferedReader);
+        printStream.println("You are " + name + " and your age is " + age);
+        return true;
+    }
+
+    private String readLineNotSafe(BufferedReader reader) {
+        try {
+            return reader.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+```
+
+#### Step 3: Register it
+
+```
+commandRegistry.registerCommand("talk", new SimpleDialogCommandHandler());
+```
+
 ### Important notes
 * Commands are case sensitive
 * Many lines commands are not supported

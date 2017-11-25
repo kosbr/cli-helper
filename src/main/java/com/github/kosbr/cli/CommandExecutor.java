@@ -5,6 +5,7 @@ import com.beust.jcommander.ParameterException;
 import com.github.kosbr.cli.util.CliUtil;
 import com.github.kosbr.cli.registry.CommandRegistry;
 
+import java.io.BufferedReader;
 import java.io.PrintStream;
 
 /**
@@ -26,7 +27,7 @@ public class CommandExecutor {
      * @param printStream
      * @return
      */
-    public boolean execute(final String command, final PrintStream printStream) {
+    public boolean execute(final String command, final PrintStream printStream, final BufferedReader bufferedReader) {
         final String[] splited = command.split(" ");
         if (splited.length == 0) {
             printStream.println("Command can't be parsed");
@@ -56,7 +57,7 @@ public class CommandExecutor {
         }
 
         try {
-            return handler.handle(options, printStream);
+            return handler.handle(options, printStream, bufferedReader);
         } catch (Throwable e) {
             printStream.println("Command handler error");
             return true;
