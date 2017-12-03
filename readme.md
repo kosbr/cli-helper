@@ -155,7 +155,7 @@ allprojects {
 	}
 }
 dependencies {
-        compile 'com.github.kosbr:cli-helper:2.0'
+        compile 'com.github.kosbr:cli-helper:2.1'
 }
 
 ```
