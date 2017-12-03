@@ -34,7 +34,9 @@ public class SpecialCasesTest {
         final String output = printStreamWrapper.getOutContent();
 
         final String expectedOutput = SequenceBuilder.create()
+                .addInputMarker()
                 .addLine("Command is not found")
+                .addInputMarker()
                 .addLine("Good bye")
                 .getAsString();
 
@@ -63,7 +65,9 @@ public class SpecialCasesTest {
         final String output = printStreamWrapper.getOutContent();
 
         final String expectedOutput = SequenceBuilder.create()
+                .addInputMarker()
                 .addLine("Command handler error")
+                .addInputMarker()
                 .addLine("Good bye")
                 .getAsString();
 
@@ -91,7 +95,9 @@ public class SpecialCasesTest {
         final String output = printStreamWrapper.getOutContent();
 
         final String expectedOutput = SequenceBuilder.create()
+                .addInputMarker()
                 .addLine("Command can't be parsed")
+                .addInputMarker()
                 .addLine("Good bye")
                 .getAsString();
 
@@ -120,7 +126,9 @@ public class SpecialCasesTest {
         final String output = printStreamWrapper.getOutContent();
 
         final String expectedOutput = SequenceBuilder.create()
+                .addInputMarker()
                 .addLine("Unknown option: --age")
+                .addInputMarker()
                 .addLine("Good bye")
                 .getAsString();
 

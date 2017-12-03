@@ -38,9 +38,11 @@ public class DialogCommandTest {
         final String output = printStreamWrapper.getOutContent();
 
         final String expectedOutput = SequenceBuilder.create()
+                .addInputMarker()
                 .addLine("What is your name?")
                 .addLine("What is your age?")
                 .addLine("You are kosbr and your age is 26")
+                .addInputMarker()
                 .addLine("Good bye")
                 .getAsString();
 

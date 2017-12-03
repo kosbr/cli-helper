@@ -32,6 +32,7 @@ public class CommandTest {
         final String output = printStreamWrapper.getOutContent();
 
         final String expectedOutput = SequenceBuilder.create()
+                .addInputMarker()
                 .addLine("Good bye")
                 .getAsString();
 
@@ -61,7 +62,9 @@ public class CommandTest {
         final String output = printStreamWrapper.getOutContent();
 
         final String expectedOutput = SequenceBuilder.create()
+                .addInputMarker()
                 .addLine("Hello, Bob")
+                .addInputMarker()
                 .addLine("Good bye")
                 .getAsString();
 

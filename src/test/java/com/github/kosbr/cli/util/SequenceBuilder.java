@@ -24,6 +24,16 @@ public class SequenceBuilder {
         return this;
     }
 
+    public SequenceBuilder addInputMarker() {
+        stringBuilder.append(">");
+        /*
+        In real life reading line adds CRLF
+        in user's console. However, it is not true for tests, because
+        separate inputStream is used. That is why there is no CRLF.
+         */
+        return this;
+    }
+
     public InputStream getAsInputStream() {
         final String inputCommands = stringBuilder.toString();
         try {

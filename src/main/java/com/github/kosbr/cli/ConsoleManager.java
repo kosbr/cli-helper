@@ -32,6 +32,7 @@ public class ConsoleManager {
         boolean waitNext = true;
         while (waitNext) {
             try {
+                printStream.print(">");
                 final String commandStr = br.readLine();
                 waitNext = commandExecutor.execute(commandStr, printStream, br);
             } catch (IOException e) {
