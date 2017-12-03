@@ -34,7 +34,9 @@ public class ConsoleManager {
             try {
                 printStream.print(">");
                 final String commandStr = br.readLine();
-                waitNext = commandExecutor.execute(commandStr, printStream, br);
+                if (!commandStr.trim().isEmpty()) {
+                    waitNext = commandExecutor.execute(commandStr, printStream, br);
+                }
             } catch (IOException e) {
                 e.printStackTrace(printStream);
             }

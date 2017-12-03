@@ -80,6 +80,35 @@ public class SpecialCasesTest {
         commandRegistry.registerCommand("exit", new ExitHandler());
 
         final InputStream inputStream = SequenceBuilder.create()
+                .addLine("")
+                .addLine("exit")
+                .getAsInputStream();
+
+        final PrintStreamWrapper printStreamWrapper = new PrintStreamWrapper();
+
+        final ConsoleManager consoleManager = new ConsoleManager(
+                printStreamWrapper.getPrintStream(), inputStream, commandRegistry
+        );
+
+        consoleManager.start();
+
+        final String output = printStreamWrapper.getOutContent();
+
+        final String expectedOutput = SequenceBuilder.create()
+                .addInputMarker()
+                .addInputMarker()
+                .addLine("Good bye")
+                .getAsString();
+
+        Assert.assertEquals(expectedOutput, output);
+    }
+
+    @Test
+    public void testBlankInput() {
+        final CommandRegistry commandRegistry = new CommandRegistry();
+        commandRegistry.registerCommand("exit", new ExitHandler());
+
+        final InputStream inputStream = SequenceBuilder.create()
                 .addLine(" ")
                 .addLine("exit")
                 .getAsInputStream();
@@ -96,7 +125,6 @@ public class SpecialCasesTest {
 
         final String expectedOutput = SequenceBuilder.create()
                 .addInputMarker()
-                .addLine("Command can't be parsed")
                 .addInputMarker()
                 .addLine("Good bye")
                 .getAsString();
