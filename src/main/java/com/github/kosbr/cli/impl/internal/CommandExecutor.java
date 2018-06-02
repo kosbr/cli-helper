@@ -44,7 +44,7 @@ public class CommandExecutor {
         }
         final Class optionsClass = handler.getOptionsClass();
 
-        CommandOptions options;
+        final CommandOptions options;
         try {
             options = (CommandOptions) optionsClass.getConstructor().newInstance();
         } catch (Throwable e) {
