@@ -1,7 +1,7 @@
 ## Java Command Line Interface Helper
 
 This library helps to create a primitive command line interface 
-using java. 
+using java 10. 
 
 ![status](https://travis-ci.org/kosbr/cli-helper.svg?branch=master) [![](https://jitpack.io/v/kosbr/cli-helper.svg)](https://jitpack.io/#kosbr/cli-helper)
 
@@ -18,6 +18,11 @@ greeting --name Bob
 #### Step 1: Describe command options
 
 ```
+package my.app.options;
+
+import com.beust.jcommander.Parameter;
+import com.github.kosbr.cli.defenition.CommandOptions;
+
 public class GreetingOptions implements CommandOptions {
 
     @Parameter(names = "--name", description = "Your name", required = true)
@@ -32,6 +37,13 @@ public class GreetingOptions implements CommandOptions {
 #### Step 2: Implement command handler
 
 ```
+package my.app.handlers;
+
+import my.app.options.GreetingOptions;
+import com.github.kosbr.cli.defenition.CommandHandler;
+
+import java.io.PrintStream;
+
 public class GreetingHandler implements CommandHandler<GreetingOptions> {
     @Override
     public boolean handle(GreetingOptions commandOptions, PrintStream printStream) {
@@ -51,6 +63,12 @@ public class GreetingHandler implements CommandHandler<GreetingOptions> {
 #### Step 3: Use it in main class
 
 ```
+package my.app.main;
+
+import com.github.kosbr.cli.impl.CommandRegistry;
+import com.github.kosbr.cli.impl.ConsoleManager;
+import my.app.handlers.GreetingHandler;
+
 public static void main(String args[]) {
     final CommandRegistry commandRegistry = new CommandRegistry();
     commandRegistry.registerCommand("greeting", new GreetingHandler());
@@ -122,14 +140,9 @@ public class SimpleDialogCommandHandler implements DialogCommandHandler<SimpleDi
 commandRegistry.registerCommand("talk", new SimpleDialogCommandHandler());
 ```
 
-### Important notes
-* Commands are case sensitive
-* Many lines commands are not supported
-* Many commands in one line are not supported
+#### How to import
 
-### How to import
-
-#### Maven
+##### Maven
 
 ```
 <repositories>
@@ -141,12 +154,12 @@ commandRegistry.registerCommand("talk", new SimpleDialogCommandHandler());
 <dependency>
 	    <groupId>com.github.kosbr</groupId>
 	    <artifactId>cli-helper</artifactId>
-	    <version>2.1</version>
+	    <version>3.0</version>
 </dependency>
 	
 ```
 
-#### Gradle
+##### Gradle
 ```
 allprojects {
 	repositories {
@@ -155,7 +168,22 @@ allprojects {
 	}
 }
 dependencies {
-        compile 'com.github.kosbr:cli-helper:2.1'
+        compile 'com.github.kosbr:cli-helper:3.0'
 }
 
 ```
+
+##### Set up the module:
+
+In module-info.java add following lines:
+
+```
+    requires cli.helper;
+    opens my.app.options;
+    // it is supposed that CommandOptions implementations are in opened package. (see examples above)
+```
+
+### Important notes
+* Commands are case sensitive
+* Many lines commands are not supported
+* Many commands in one line are not supported
