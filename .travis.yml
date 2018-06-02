@@ -1,1 +1,26 @@
 language: java
+
+# The original is taken from here https://github.com/junit-team/junit5/blob/master/.travis.yml
+
+sudo: false
+dist: trusty
+
+
+before_install:
+# https://github.com/travis-ci/travis-ci/issues/8408
+# Also interferes with platform-tooling-support-tests expectations
+  - unset _JAVA_OPTIONS
+
+install:
+  - echo "Don't let Travis CI execute default script"
+
+matrix:
+  include:
+    - os: linux
+      jdk: openjdk10
+
+script:
+# Display Maven, JVM versions
+  - ./mvnw --version
+# Build
+  - ./mvnw clean install
