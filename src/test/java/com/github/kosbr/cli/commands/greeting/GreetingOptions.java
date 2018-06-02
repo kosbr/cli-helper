@@ -1,7 +1,7 @@
 package com.github.kosbr.cli.commands.greeting;
 
 import com.beust.jcommander.Parameter;
-import com.github.kosbr.cli.CommandOptions;
+import com.github.kosbr.cli.defenition.CommandOptions;
 
 public class GreetingOptions implements CommandOptions {
 

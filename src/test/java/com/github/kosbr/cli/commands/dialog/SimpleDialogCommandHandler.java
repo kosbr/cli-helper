@@ -1,6 +1,6 @@
 package com.github.kosbr.cli.commands.dialog;
 
-import com.github.kosbr.cli.DialogCommandHandler;
+import com.github.kosbr.cli.defenition.DialogCommandHandler;
 
 import java.io.BufferedReader;
 import java.io.IOException;

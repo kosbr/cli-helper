@@ -1,4 +1,4 @@
-package com.github.kosbr.cli;
+package com.github.kosbr.cli.defenition;
 
 import java.io.BufferedReader;
 import java.io.PrintStream;

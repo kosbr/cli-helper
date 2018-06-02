@@ -16,7 +16,7 @@
     -->
 
     <Match>
-        <Class name="com.github.kosbr.cli.ConsoleManager" />
+        <Class name="com.github.kosbr.cli.impl.ConsoleManager" />
         <Method name="start" />
         <Bug pattern="NP_DEREFERENCE_OF_READLINE_VALUE" />
     </Match>

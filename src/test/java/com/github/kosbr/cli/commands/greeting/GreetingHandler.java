@@ -1,6 +1,6 @@
 package com.github.kosbr.cli.commands.greeting;
 
-import com.github.kosbr.cli.CommandHandler;
+import com.github.kosbr.cli.defenition.CommandHandler;
 
 import java.io.PrintStream;
 

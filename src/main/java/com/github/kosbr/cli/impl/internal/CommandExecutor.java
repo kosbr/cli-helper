@@ -1,9 +1,11 @@
-package com.github.kosbr.cli;
+package com.github.kosbr.cli.impl.internal;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.ParameterException;
+import com.github.kosbr.cli.defenition.CommandHandler;
+import com.github.kosbr.cli.defenition.CommandOptions;
 import com.github.kosbr.cli.util.CliUtil;
-import com.github.kosbr.cli.registry.CommandRegistry;
+import com.github.kosbr.cli.impl.CommandRegistry;
 
 import java.io.BufferedReader;
 import java.io.PrintStream;

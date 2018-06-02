@@ -1,6 +1,6 @@
-package com.github.kosbr.cli;
+package com.github.kosbr.cli.impl;
 
-import com.github.kosbr.cli.registry.CommandRegistry;
+import com.github.kosbr.cli.impl.internal.CommandExecutor;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;

@@ -1,4 +1,4 @@
-package com.github.kosbr.cli;
+package com.github.kosbr.cli.defenition;
 
 /**
  * Marker interface for objects that represent command options.

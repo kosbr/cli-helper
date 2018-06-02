@@ -1,4 +1,4 @@
-package com.github.kosbr.cli;
+package com.github.kosbr.cli.defenition;
 
 import java.io.BufferedReader;
 import java.io.PrintStream;
@@ -31,6 +31,6 @@ public interface DialogCommandHandler<OPTIONS extends CommandOptions> extends Co
     @Override
     default boolean handle(final OPTIONS commandOptions, final PrintStream printStream) {
         throw new UnsupportedOperationException("The method handle(OPTIONS commandOptions, PrintStream printStream) "
-                + "of com.github.kosbr.cli.DialogCommandHandler shouldn't be called ");
+                + "of com.github.kosbr.cli.defenition.DialogCommandHandler shouldn't be called ");
     }
 }

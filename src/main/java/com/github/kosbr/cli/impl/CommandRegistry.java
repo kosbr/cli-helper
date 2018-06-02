@@ -1,6 +1,6 @@
-package com.github.kosbr.cli.registry;
+package com.github.kosbr.cli.impl;
 
-import com.github.kosbr.cli.CommandHandler;
+import com.github.kosbr.cli.defenition.CommandHandler;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

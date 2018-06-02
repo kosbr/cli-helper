@@ -2,7 +2,8 @@ package com.github.kosbr.cli;
 
 import com.github.kosbr.cli.commands.dialog.SimpleDialogCommandHandler;
 import com.github.kosbr.cli.commands.exit.ExitHandler;
-import com.github.kosbr.cli.registry.CommandRegistry;
+import com.github.kosbr.cli.impl.CommandRegistry;
+import com.github.kosbr.cli.impl.ConsoleManager;
 import com.github.kosbr.cli.util.PrintStreamWrapper;
 import com.github.kosbr.cli.util.SequenceBuilder;
 import org.junit.Assert;
